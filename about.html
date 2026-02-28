@@ -436,5 +436,17 @@
 </script>
 \n  <script src="responsive.js"></script>
 <script type="module" src="src/main.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const btn = document.getElementById("mobile-menu-btn");
+    const links = document.getElementById("nav-links");
+
+    if (btn && links) {
+      btn.addEventListener("click", function () {
+        links.classList.toggle("mobile-active");
+      });
+    }
+  });
+</script>
 </body>
 </html>
