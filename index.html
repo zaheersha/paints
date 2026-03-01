@@ -1968,53 +1968,104 @@
   </section>
 
   <!-- PRODUCT CATEGORIES -->
-  <section class="categories">
-    <div class="section-eyebrow section-eyebrow-light">Our Range</div>
-    <h2 class="section-title section-title-white" style="margin-top:8px">Built for Every Surface</h2>
-    <div class="cat-grid">
-      <div class="cat-card">
-        <div class="cat-card-bg bg-interior"><span class="img-placeholder-label">[ Interior Image ]</span></div>
-        <div class="cat-accent accent-terracotta"></div>
-        <div class="cat-card-overlay"></div>
-        <div class="cat-content">
-          <h3 class="cat-name">Interior Emulsions</h3>
-          <p class="cat-desc">Premium washable interior wall paints with lasting colour depth.</p><a
-            href="products.html" class="cat-link">Explore →</a>
-        </div>
-      </div>
-      <div class="cat-card">
-        <div class="cat-card-bg bg-exterior"><span class="img-placeholder-label">[ Exterior Image ]</span></div>
-        <div class="cat-accent accent-sage"></div>
-        <div class="cat-card-overlay"></div>
-        <div class="cat-content">
-          <h3 class="cat-name">Exterior Coatings</h3>
-          <p class="cat-desc">Weather-resistant facades — UV, rain and fade protected.</p><a href="products.html"
-            class="cat-link cat-link-sage">Explore →</a>
-        </div>
-      </div>
-      <div class="cat-card">
-        <div class="cat-card-bg bg-texture"><span class="img-placeholder-label">[ Texture Image ]</span></div>
-        <div class="cat-accent accent-slate"></div>
-        <div class="cat-card-overlay"></div>
-        <div class="cat-content">
-          <h3 class="cat-name">Textured Finishes</h3>
-          <p class="cat-desc">Rustic and fine texture coatings for statement feature walls.</p><a href="products.html"
-            class="cat-link" style="color:#8BAAC8">Explore →</a>
-        </div>
-      </div>
-      <div class="cat-card">
-        <div class="cat-card-bg bg-primer"><span class="img-placeholder-label">[ Primer Image ]</span></div>
-        <div class="cat-accent accent-cream"></div>
-        <div class="cat-card-overlay"></div>
-        <div class="cat-content">
-          <h3 class="cat-name">Primers & Wallcare</h3>
-          <p class="cat-desc">The foundation of every system — interior, exterior and dampproof.</p><a
-            href="products.html" class="cat-link">Explore →</a>
-        </div>
+<section
+  style={{
+    padding: "80px 20px",
+    background: "#111",
+    color: "white",
+  }}
+>
+  <div style={{ textAlign: "center", marginBottom: "50px" }}>
+    <div style={{ letterSpacing: "2px", opacity: 0.7 }}>Our Range</div>
+    <h2 style={{ marginTop: "8px", fontSize: "32px" }}>
+      Built for Every Surface
+    </h2>
+  </div>
+
+  <div
+    style={{
+      display: "grid",
+      gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
+      gap: "24px",
+    }}
+  >
+    {/* Interior */}
+    <div style={{ position: "relative", borderRadius: "16px", overflow: "hidden" }}>
+      <img
+        src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80"
+        alt="Interior Paint"
+        style={{
+          width: "100%",
+          height: "350px",
+          objectFit: "cover",
+          display: "block",
+        }}
+      />
+      <div style={{
+        position: "absolute",
+        bottom: "20px",
+        left: "20px"
+      }}>
+        <h3>Interior Emulsions</h3>
+        <p>Premium washable interior wall paints.</p>
       </div>
     </div>
-  </section>
 
+    {/* Exterior */}
+    <div style={{ position: "relative", borderRadius: "16px", overflow: "hidden" }}>
+      <img
+        src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1200&q=80"
+        alt="Exterior Coating"
+        style={{
+          width: "100%",
+          height: "350px",
+          objectFit: "cover",
+          display: "block",
+        }}
+      />
+      <div style={{ position: "absolute", bottom: "20px", left: "20px" }}>
+        <h3>Exterior Coatings</h3>
+        <p>Weather-resistant facades.</p>
+      </div>
+    </div>
+
+    {/* Texture */}
+    <div style={{ position: "relative", borderRadius: "16px", overflow: "hidden" }}>
+      <img
+        src="https://images.unsplash.com/photo-1618220179428-22790b461013?auto=format&fit=crop&w=1200&q=80"
+        alt="Textured Wall"
+        style={{
+          width: "100%",
+          height: "350px",
+          objectFit: "cover",
+          display: "block",
+        }}
+      />
+      <div style={{ position: "absolute", bottom: "20px", left: "20px" }}>
+        <h3>Textured Finishes</h3>
+        <p>Rustic & fine texture coatings.</p>
+      </div>
+    </div>
+
+    {/* Primer */}
+    <div style={{ position: "relative", borderRadius: "16px", overflow: "hidden" }}>
+      <img
+        src="https://images.unsplash.com/photo-1581093458791-9f3c3900b6f6?auto=format&fit=crop&w=1200&q=80"
+        alt="Primer Wall Preparation"
+        style={{
+          width: "100%",
+          height: "350px",
+          objectFit: "cover",
+          display: "block",
+        }}
+      />
+      <div style={{ position: "absolute", bottom: "20px", left: "20px" }}>
+        <h3>Primers & Wallcare</h3>
+        <p>The foundation of every paint system.</p>
+      </div>
+    </div>
+  </div>
+</section>
   <!-- BRANDS -->
   <section class="brands-section">
     <div class="section-header">
@@ -2074,79 +2125,278 @@
   </section>
 
   <!-- DEALER NETWORK -->
-  <section class="dealer-network">
-    <div class="dealer-inner animate-on-scroll">
-      <div class="dealer-text">
-        <div class="section-eyebrow">Distribution</div>
-        <h2 class="section-title">200+ Dealers. Retail Reach Across the Region.</h2>
-        <p>We built our dealer network from day one — because we know that the best paint in the world is useless if it
-          isn't easy to source. Our 200+ dealer network means Vegam and Cycle products are accessible to retail
-          customers, contractors and site teams wherever they're working.</p>
-        <div class="dealer-stat-row">
-          <div>
-            <div class="dealer-stat-num">200+</div>
-            <div class="dealer-stat-label">Active Dealers</div>
-          </div>
-          <div>
-            <div class="dealer-stat-num">2</div>
-            <div class="dealer-stat-label">Complete Brands</div>
-          </div>
-          <div>
-            <div class="dealer-stat-num">2025</div>
-            <div class="dealer-stat-label">Est. Hyderabad</div>
-          </div>
-        </div>
-        <a href="contact.html" class="btn-dealer">Find a Dealer Near You</a>
-      </div>
-      <div class="dealer-visual">
-        <div class="dealer-img-block large"><span class="dealer-img-label">[ Dealer store /<br>showroom photo ]</span>
-        </div>
-        <div class="dealer-img-block"><span class="dealer-img-label">[ Product on shelf ]</span></div>
-        <div class="dealer-img-block"><span class="dealer-img-label">[ Paint counter ]</span></div>
-      </div>
-    </div>
-  </section>
+<section
+  style={{
+    padding: "100px 20px",
+    background: "#f8f8f8",
+  }}
+>
+  <div
+    style={{
+      display: "flex",
+      flexWrap: "wrap",
+      gap: "50px",
+      alignItems: "center",
+      justifyContent: "space-between",
+    }}
+  >
+    {/* LEFT CONTENT */}
+    <div style={{ flex: "1", minWidth: "300px" }}>
+      <div style={{ letterSpacing: "2px", color: "#777" }}>Distribution</div>
 
-  <!-- INSPIRATION -->
-  <section class="inspiration">
-    <div class="section-header">
-      <div>
-        <div class="section-eyebrow">Project Showcase</div>
-        <h2 class="section-title">Spaces We've Transformed</h2>
-      </div>
-      <a href="about.html" class="section-link">View All Projects →</a>
-    </div>
-    <div class="insp-grid animate-on-scroll">
-      <div class="insp-card large">
-        <div class="insp-bg bg-insp-1"><span class="insp-ph">[ Project Image 1 ]</span></div>
-        <div class="insp-caption">
-          <div class="insp-caption-inner">
-            <div class="insp-project">Luxury Villa — Jubilee Hills</div>
-            <div class="insp-detail">Vegam Exterior Emulsion · 8-Year System</div>
-          </div>
-        </div>
-      </div>
-      <div class="insp-card">
-        <div class="insp-bg bg-insp-2"><span class="insp-ph">[ Project Image 2 ]</span></div>
-        <div class="insp-caption">
-          <div class="insp-caption-inner">
-            <div class="insp-project">Corporate Office — Gachibowli</div>
-            <div class="insp-detail">Vegam Interior + Texture Fine</div>
-          </div>
-        </div>
-      </div>
-      <div class="insp-card">
-        <div class="insp-bg bg-insp-3"><span class="insp-ph">[ Project Image 3 ]</span></div>
-        <div class="insp-caption">
-          <div class="insp-caption-inner">
-            <div class="insp-project">Residential Complex — Kondapur</div>
-            <div class="insp-detail">Cycle Exterior System · Builder Project</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+      <h2 style={{ fontSize: "32px", margin: "15px 0" }}>
+        200+ Dealers. Retail Reach Across the Region.
+      </h2>
 
+      <p style={{ lineHeight: "1.7", color: "#555" }}>
+        Our 200+ dealer network ensures Vegam and Cycle products are
+        accessible to retail customers, contractors and site teams
+        wherever they're working.
+      </p>
+
+      <div
+        style={{
+          display: "flex",
+          gap: "40px",
+          marginTop: "30px",
+          flexWrap: "wrap",
+        }}
+      >
+        <div>
+          <div style={{ fontSize: "28px", fontWeight: "bold" }}>200+</div>
+          <div>Active Dealers</div>
+        </div>
+        <div>
+          <div style={{ fontSize: "28px", fontWeight: "bold" }}>2</div>
+          <div>Complete Brands</div>
+        </div>
+        <div>
+          <div style={{ fontSize: "28px", fontWeight: "bold" }}>2025</div>
+          <div>Est. Hyderabad</div>
+        </div>
+      </div>
+
+      <a
+        href="/contact"
+        style={{
+          display: "inline-block",
+          marginTop: "30px",
+          padding: "12px 25px",
+          background: "#111",
+          color: "white",
+          textDecoration: "none",
+          borderRadius: "8px",
+        }}
+      >
+        Find a Dealer Near You
+      </a>
+    </div>
+
+    {/* RIGHT IMAGE GRID */}
+    <div
+      style={{
+        flex: "1",
+        minWidth: "300px",
+        display: "grid",
+        gridTemplateColumns: "repeat(auto-fit, minmax(140px, 1fr))",
+        gap: "15px",
+      }}
+    >
+      <img
+        src="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?auto=format&fit=crop&w=1200&q=80"
+        alt="Dealer Showroom"
+        style={{
+          width: "100%",
+          height: "300px",
+          objectFit: "cover",
+          borderRadius: "12px",
+        }}
+      />
+
+      <img
+        src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1200&q=80"
+        alt="Product Shelf"
+        style={{
+          width: "100%",
+          height: "140px",
+          objectFit: "cover",
+          borderRadius: "12px",
+        }}
+      />
+
+      <img
+        src="https://images.unsplash.com/photo-1598300056393-4aac492f4344?auto=format&fit=crop&w=1200&q=80"
+        alt="Paint Counter"
+        style={{
+          width: "100%",
+          height: "140px",
+          objectFit: "cover",
+          borderRadius: "12px",
+        }}
+      />
+    </div>
+  </div>
+</section>
+  
+ <section
+  style={{
+    padding: "100px 20px",
+    background: "#111",
+    color: "white",
+  }}
+>
+  {/* Header */}
+  <div
+    style={{
+      display: "flex",
+      justifyContent: "space-between",
+      alignItems: "center",
+      flexWrap: "wrap",
+      marginBottom: "50px",
+      gap: "20px",
+    }}
+  >
+    <div>
+      <div style={{ letterSpacing: "2px", opacity: 0.7 }}>
+        Project Showcase
+      </div>
+      <h2 style={{ fontSize: "32px", marginTop: "8px" }}>
+        Spaces We've Transformed
+      </h2>
+    </div>
+
+    <a
+      href="/about"
+      style={{
+        color: "white",
+        textDecoration: "none",
+        borderBottom: "1px solid white",
+        paddingBottom: "3px",
+      }}
+    >
+      View All Projects →
+    </a>
+  </div>
+
+  {/* Grid */}
+  <div
+    style={{
+      display: "grid",
+      gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
+      gap: "20px",
+    }}
+  >
+    {/* Large Card */}
+    <div
+      style={{
+        position: "relative",
+        borderRadius: "16px",
+        overflow: "hidden",
+        gridColumn: "span 2",
+      }}
+    >
+      <img
+        src="https://images.unsplash.com/photo-1600607687644-c7171b42498f?auto=format&fit=crop&w=1600&q=80"
+        alt="Luxury Villa"
+        style={{
+          width: "100%",
+          height: "400px",
+          objectFit: "cover",
+          display: "block",
+        }}
+      />
+      <div
+        style={{
+          position: "absolute",
+          bottom: "0",
+          width: "100%",
+          background:
+            "linear-gradient(to top, rgba(0,0,0,0.8), rgba(0,0,0,0.2))",
+          padding: "25px",
+        }}
+      >
+        <div style={{ fontWeight: "bold", fontSize: "18px" }}>
+          Luxury Villa — Jubilee Hills
+        </div>
+        <div style={{ opacity: 0.8 }}>
+          Vegam Exterior Emulsion · 8-Year System
+        </div>
+      </div>
+    </div>
+
+    {/* Card 2 */}
+    <div
+      style={{
+        position: "relative",
+        borderRadius: "16px",
+        overflow: "hidden",
+      }}
+    >
+      <img
+        src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1200&q=80"
+        alt="Corporate Office"
+        style={{
+          width: "100%",
+          height: "400px",
+          objectFit: "cover",
+        }}
+      />
+      <div
+        style={{
+          position: "absolute",
+          bottom: "0",
+          width: "100%",
+          background:
+            "linear-gradient(to top, rgba(0,0,0,0.8), rgba(0,0,0,0.2))",
+          padding: "20px",
+        }}
+      >
+        <div style={{ fontWeight: "bold" }}>
+          Corporate Office — Gachibowli
+        </div>
+        <div style={{ opacity: 0.8 }}>
+          Vegam Interior + Texture Fine
+        </div>
+      </div>
+    </div>
+
+    {/* Card 3 */}
+    <div
+      style={{
+        position: "relative",
+        borderRadius: "16px",
+        overflow: "hidden",
+      }}
+    >
+      <img
+        src="https://images.unsplash.com/photo-1600585152915-d208bec867a1?auto=format&fit=crop&w=1200&q=80"
+        alt="Residential Complex"
+        style={{
+          width: "100%",
+          height: "400px",
+          objectFit: "cover",
+        }}
+      />
+      <div
+        style={{
+          position: "absolute",
+          bottom: "0",
+          width: "100%",
+          background:
+            "linear-gradient(to top, rgba(0,0,0,0.8), rgba(0,0,0,0.2))",
+          padding: "20px",
+        }}
+      >
+        <div style={{ fontWeight: "bold" }}>
+          Residential Complex — Kondapur
+        </div>
+        <div style={{ opacity: 0.8 }}>
+          Cycle Exterior System · Builder Project
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
   <!-- WHY VEGAM -->
   <section class="why">
     <div class="section-header">
