@@ -213,8 +213,8 @@ footer { background: var(--charcoal); padding: 64px 48px 0; }
   .mobile-toggle span { width: 24px; height: 2px; background: var(--charcoal); transition: 0.3s; }
   
   .nav-links.mobile-open {
-    display: flex; flex-direction: column; position: fixed; top: 0; left: 0; right: 0; bottom: 0;
-    background: white; padding: 100px 40px; gap: 30px; z-index: 100;
+    display: flex; flex-direction: column; position: fixed; top: -150px; left: 0; right: 0; bottom: 0;
+    background: whitesmoke; padding: 200px 40px; gap: 30px; z-index: 100;
   }
   .nav-links.mobile-open a { font-size: 18px; }
 

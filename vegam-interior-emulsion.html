@@ -1,651 +1,1132 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vegam Interior Emulsion — Vegam — Premium | Vegam Paints</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="product-shared.css" />
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Vegam Interior Emulsion — Vegam — Premium | Vegam Paints</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link
-    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap"
-    rel="stylesheet">
-  <link rel="stylesheet" href="product-shared.css">
-
-  <style>
-    .animate-on-scroll {
-      opacity: 0;
-      transform: translateY(30px);
-      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-    }
-
-    .animate-on-scroll.is-visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-      .nav-links.mobile-open {
-        display: flex;
-        flex-direction: column;
-        position: fixed;
-        top: -150px;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: white;
-        padding: 200px 40px;
-        gap: 30px;
-        z-index: 100;
+    <style>
+      .animate-on-scroll {
+        opacity: 0;
+        transform: translateY(30px);
+        transition:
+          opacity 0.8s ease-out,
+          transform 0.8s ease-out;
       }
 
-      .nav-links.mobile-open a {
-        font-size: 18px;
+      .animate-on-scroll.is-visible {
+        opacity: 1;
+        transform: translateY(0);
       }
-  </style>
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      // Scroll Animations
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('is-visible');
-          }
+    </style>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        // Scroll Animations
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("is-visible");
+              }
+            });
+          },
+          { threshold: 0.1 },
+        );
+
+        document
+          .querySelectorAll(
+            "section, .product-card, .info-card, .hero-content, .brand-card",
+          )
+          .forEach((el) => {
+            el.classList.add("animate-on-scroll");
+            observer.observe(el);
+          });
+
+        // Mobile Navigation Toggle
+        const navLinks = document.querySelector(".nav-links");
+        const mobileToggle = document.createElement("div");
+        mobileToggle.className = "mobile-toggle";
+        mobileToggle.innerHTML = "<span></span><span></span><span></span>";
+        document.querySelector("nav").appendChild(mobileToggle);
+
+        mobileToggle.addEventListener("click", () => {
+          navLinks.classList.toggle("mobile-open");
         });
-      }, { threshold: 0.1 });
 
-      document.querySelectorAll('section, .product-card, .info-card, .hero-content, .brand-card').forEach(el => {
-        el.classList.add('animate-on-scroll');
-        observer.observe(el);
-      });
-
-      // Mobile Navigation Toggle
-      const navLinks = document.querySelector('.nav-links');
-      const mobileToggle = document.createElement('div');
-      mobileToggle.className = 'mobile-toggle';
-      mobileToggle.innerHTML = '<span></span><span></span><span></span>';
-      document.querySelector('nav').appendChild(mobileToggle);
-
-      mobileToggle.addEventListener('click', () => {
-        navLinks.classList.toggle('mobile-open');
-      });
-
-      // Close mobile menu when a link is clicked
-      document.querySelectorAll('.nav-links a').forEach(link => {
-        link.addEventListener('click', () => {
-          navLinks.classList.remove('mobile-open');
+        // Close mobile menu when a link is clicked
+        document.querySelectorAll(".nav-links a").forEach((link) => {
+          link.addEventListener("click", () => {
+            navLinks.classList.remove("mobile-open");
+          });
         });
       });
-    });
-  </script>
-</head>
+    </script>
+  </head>
 
-<body>
+  <body>
+    <nav>
+      <a href="index.html" class="nav-logo">
+        <span class="nav-logo-main">Vegam Paints</span>
+        <span class="nav-logo-sub">Architectural Coatings</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="products.html" class="active">Products</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div><a href="contact.html" class="nav-cta">Get a Quote</a></div>
+    </nav>
 
-
-  <nav>
-    <a href="index.html" class="nav-logo">
-      <span class="nav-logo-main">Vegam Paints</span>
-      <span class="nav-logo-sub">Architectural Coatings</span>
-    </a>
-    <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="products.html" class="active">Products</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-    <div><a href="contact.html" class="nav-cta">Get a Quote</a></div>
-</nav>
-
-
-  <!-- BREADCRUMB -->
-  <div class="breadcrumb">
-    <a href="index.html">Home</a>
-    <span class="breadcrumb-sep">›</span>
-    <a href="products.html">Products</a>
-    <span class="breadcrumb-sep">›</span>
-    <a href="products.html">Interior Emulsions</a>
-    <span class="breadcrumb-sep">›</span>
-    <span class="breadcrumb-current">Vegam Interior Emulsion</span>
-  </div>
-
-  <!-- PRODUCT HERO -->
-  <section class="product-hero vegam-product">
-    <div class="product-image-area">
-      <span class="product-brand-ribbon ribbon-vegam">Vegam — Premium</span>
-
-      <div class="product-image-box">
-        <div class="product-image-box-inner" style="width: 80%; height: 80%;">
-          <img src="/images/interior_hero_3.jpg" alt="Product Image" style="width:100%;height:100%;object-fit:cover;">
-        </div>
-      </div>
-      <div class="product-swatches-row">
-        <div class="product-swatch" style="background:#C1623F" title="Terracotta"></div>
-        <div class="product-swatch" style="background:#D4845A" title="Amber Clay"></div>
-        <div class="product-swatch" style="background:#E3A96A" title="Old Copper"></div>
-        <div class="product-swatch" style="background:#F5ECD7" title="Warm Linen"></div>
-        <div class="product-swatch" style="background:#8B7355" title="Raw Sienna"></div>
-      </div>
+    <!-- BREADCRUMB -->
+    <div class="breadcrumb">
+      <a href="index.html">Home</a>
+      <span class="breadcrumb-sep">›</span>
+      <a href="products.html">Products</a>
+      <span class="breadcrumb-sep">›</span>
+      <a href="products.html">Interior Emulsions</a>
+      <span class="breadcrumb-sep">›</span>
+      <span class="breadcrumb-current">Vegam Interior Emulsion</span>
     </div>
 
-    <div class="product-info-area">
-      <div class="product-category-tag">Interior Emulsions</div>
-      <h1 class="product-name">Vegam Interior Emulsion</h1>
-      <div class="product-brand-line">Vegam — Premium</div>
-      <p class="product-tagline">Rich colour depth, smooth washable finish — for interiors that stay beautiful.</p>
-      <p class="product-short-desc">Vegam Interior Emulsion is our flagship interior wall paint — formulated for
-        architects and designers who demand colour accuracy, durability and a finish that holds up to daily life. Low
-        VOC, anti-bacterial and fully washable.</p>
+    <!-- PRODUCT HERO -->
+    <section class="product-hero vegam-product">
+      <div class="product-image-area">
+        <span class="product-brand-ribbon ribbon-vegam">Vegam — Premium</span>
 
-      <div class="product-feature-tags"><span class="ftag ftag-terracotta">Low VOC</span><span
-          class="ftag ftag-sage">Washable</span><span class="ftag ftag-slate">Anti-bacterial</span><span
-          class="ftag ftag-terracotta">Soft Sheen Finish</span><span class="ftag ftag-sage">Colour Accurate</span></div>
-
-      <div class="warranty-row">
-        <div class="warranty-block">
-          <span class="warranty-num">8yr</span>
-          <span class="warranty-desc">Year Exterior<br>System Warranty</span>
-        </div>
-        <div class="warranty-divider"></div>
-        <div class="warranty-block">
-          <span class="warranty-num">5yr</span>
-          <span class="warranty-desc">Year Interior<br>System Warranty</span>
-        </div>
-      </div>
-      <div class="product-ctas">
-        <a href="contact.html" class="btn-get-quote ">Get a Quote</a>
-        <a href="#" class="btn-sample"
-          onclick="event.preventDefault(); window.open('https://wa.me/919494333702?text=' + encodeURIComponent('Hi Vegam Paints, I would like to request a sample for Vegam Interior Emulsion. Here are my details:'), '_blank')">Request
-          Sample</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- PRODUCT TABS -->
-  <div class="product-tabs-wrap">
-    <div class="product-tabs">
-      <div class="product-tab active" id="tab-overview" onclick="openTab('overview')">Overview</div>
-      <div class="product-tab" id="tab-specs" onclick="openTab('specs')">Specifications</div>
-      <div class="product-tab" id="tab-application" onclick="openTab('application')">How to Apply</div>
-      <div class="product-tab" id="tab-system" onclick="openTab('system')">System Guide</div>
-    </div>
-  </div>
-
-  <!-- TAB PANELS -->
-  <div class="tab-panels">
-
-    <!-- OVERVIEW -->
-    <div class="tab-panel active" id="panel-overview">
-      <div class="tab-grid">
-        <div>
-          <h2 class="tab-section-title">About This Product</h2>
-          <div class="overview-body">
-            <p><strong>Vegam Interior Emulsion</strong> is engineered to deliver rich, consistent colour across all
-              interior wall and ceiling surfaces. Its advanced acrylic binder ensures excellent adhesion to plaster,
-              concrete and gypsum board surfaces, while the low-VOC formulation keeps indoor air quality safe from day
-              one.</p>
-            <p>The soft sheen finish enhances colour depth without creating glare — ideal for living rooms, bedrooms,
-              offices and hospitality spaces where appearance matters as much as performance.</p>
-            <p>Anti-bacterial additives inhibit mould and mildew growth on the paint film, making this product
-              particularly well-suited to kitchens, bathrooms and humid climates.</p>
+        <div class="product-image-box">
+          <div class="product-image-box-inner" style="width: 80%; height: 80%">
+            <img
+              src="/images/interior_hero_3.jpg"
+              alt="Product Image"
+              style="width: 100%; height: 100%; object-fit: cover"
+            />
           </div>
         </div>
-        <div>
-          <h2 class="tab-section-title">Ideal Applications</h2>
-          <div class="use-cases">
-            <div class="use-case"><span class="use-case-icon">🛋️</span>
-              <div class="use-case-text">
-                <h4>Living Rooms & Bedrooms</h4>
-                <p>Smooth washable finish with rich colour — hides minor imperfections beautifully.</p>
-              </div>
-            </div>
-            <div class="use-case"><span class="use-case-icon">🏢</span>
-              <div class="use-case-text">
-                <h4>Commercial & Office Spaces</h4>
-                <p>Anti-bacterial properties and durable finish for high-footfall environments.</p>
-              </div>
-            </div>
-            <div class="use-case"><span class="use-case-icon">🍳</span>
-              <div class="use-case-text">
-                <h4>Kitchens & Bathrooms</h4>
-                <p>Moisture and mould resistance for humid rooms.</p>
-              </div>
-            </div>
-            <div class="use-case"><span class="use-case-icon">🏨</span>
-              <div class="use-case-text">
-                <h4>Hospitality Projects</h4>
-                <p>Colour-consistent results across large areas for hotels and serviced apartments.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- SPECS -->
-    <div class="tab-panel" id="panel-specs">
-      <div class="tab-grid">
-        <div>
-          <h2 class="tab-section-title">Technical Specifications</h2>
-          <table class="specs-table">
-            <tr>
-              <td>Base</td>
-              <td>Acrylic emulsion, water-based</td>
-            </tr>
-            <tr>
-              <td>Finish</td>
-              <td>Soft sheen</td>
-            </tr>
-            <tr>
-              <td>VOC Level</td>
-              <td>Low VOC —  30 g/L</td>
-            </tr>
-            <tr>
-              <td>Drying Time</td>
-              <td>Touch dry: 1 to 2 hrs | Recoat: 4 to 6 hrs</td>
-            </tr>
-            <tr>
-              <td>Coverage</td>
-              <td>120 to 140 sq ft per litre per coat</td>
-            </tr>
-            <tr>
-              <td>Coats Required</td>
-              <td>Minimum 2 coats</td>
-            </tr>
-            <tr>
-              <td>Dilution</td>
-              <td>Up to 10% water for brush, up to 20% for spray</td>
-            </tr>
-            <tr>
-              <td>Pack Sizes</td>
-              <td>1L, 4L, 10L, 20L</td>
-            </tr>
-            <tr>
-              <td>Sheen Level</td>
-              <td>10–15 GU (soft sheen)</td>
-            </tr>
-            <tr>
-              <td>Tintable</td>
-              <td>Yes — full colour range available</td>
-            </tr>
-          </table>
-        </div>
-        <div>
-          <h2 class="tab-section-title">System Coverage</h2>
-          <p style="font-size:14px;color:var(--charcoal-light);line-height:1.8;margin-bottom:20px">Coverage is
-            theoretical and will vary based on surface texture, porosity, application method and operator skill. We
-            recommend calculating at 120 sq ft/L for project estimates.</p>
-          <div style="background:var(--cream);padding:24px">
-            <div
-              style="font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--charcoal-light);margin-bottom:16px">
-              Coverage Guide</div>
-            <div
-              style="display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid var(--cream-dark);font-size:13px;color:var(--charcoal)">
-              <span>Smooth plaster walls</span><span style="color:var(--terracotta);">130–140 sq ft/L</span></div>
-            <div
-              style="display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid var(--cream-dark);font-size:13px;color:var(--charcoal)">
-              <span>Medium texture plaster</span><span style="color:var(--terracotta);">115–125 sq ft/L</span></div>
-            <div
-              style="display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid var(--cream-dark);font-size:13px;color:var(--charcoal)">
-              <span>Rough / old walls</span><span style="color:var(--terracotta);">100–115 sq ft/L</span></div>
-            <div
-              style="display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid var(--cream-dark);font-size:13px;color:var(--charcoal)">
-              <span>Ceiling application</span><span style="color:var(--terracotta);">125–135 sq ft/L</span></div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- APPLICATION -->
-    <div class="tab-panel" id="panel-application">
-      <div class="tab-grid">
-        <div>
-          <h2 class="tab-section-title">Application Steps</h2>
-          <div class="steps">
-            <div class="step"><span class="step-num ">01</span>
-              <div class="step-body">
-                <h4>Surface Preparation</h4>
-                <p>Ensure walls are clean, dry and free of dust, grease and loose particles. Fill cracks with Wallcare
-                  Putty and sand smooth once cured.</p>
-                <div class='step-tip '>Allow putty to cure fully — at least 24 hours — before priming.</div>
-              </div>
-            </div>
-            <div class="step"><span class="step-num ">02</span>
-              <div class="step-body">
-                <h4>Apply Vegam Interior Primer</h4>
-                <p>Apply 1–2 coats of Vegam Interior Primer to all surfaces. Allow each coat to dry fully before
-                  proceeding.</p>
-                <div class='step-tip '>Primer coat is essential to ensure adhesion and uniform topcoat absorption.</div>
-              </div>
-            </div>
-            <div class="step"><span class="step-num ">03</span>
-              <div class="step-body">
-                <h4>First Coat</h4>
-                <p>Dilute up to 10% with clean water. Apply evenly using a roller or brush. Work in sections to maintain
-                  a wet edge.</p>
-                <div class='step-tip '>Apply in one direction first, then cross-roll to eliminate roller marks.</div>
-              </div>
-            </div>
-            <div class="step"><span class="step-num ">04</span>
-              <div class="step-body">
-                <h4>Second Coat</h4>
-                <p>Allow the first coat to dry for a minimum of 4–6 hours. Apply second coat without dilution for
-                  maximum colour intensity and coverage.</p>
-                <div class='step-tip '>Two coats are minimum for system warranty. A third coat may be needed for deep
-                  tones.</div>
-              </div>
-            </div>
-            <div class="step"><span class="step-num ">05</span>
-              <div class="step-body">
-                <h4>Clean Up</h4>
-                <p>Clean tools with water immediately after use. Dispose of waste paint responsibly.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div>
-          <h2 class="tab-section-title">Tools & Tips</h2>
-          <div style="background:var(--cream);padding:28px;margin-bottom:20px">
-            <div
-              style="font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--charcoal-light);margin-bottom:16px">
-              Recommended Tools</div>
-            <div
-              style="display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid var(--cream-dark);font-size:13px;color:var(--charcoal)">
-              <span>🖌️</span><span>Brush — 3–4 inch for cutting in corners and edges</span></div>
-            <div
-              style="display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid var(--cream-dark);font-size:13px;color:var(--charcoal)">
-              <span>🎨</span><span>Short-nap roller (9mm) for smooth wall surfaces</span></div>
-            <div
-              style="display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid var(--cream-dark);font-size:13px;color:var(--charcoal)">
-              <span>💨</span><span>Airless spray — dilute to 20% for spray application</span></div>
-            <div
-              style="display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid var(--cream-dark);font-size:13px;color:var(--charcoal)">
-              <span>🔲</span><span>Masking tape and dust sheets for protection</span></div>
-          </div>
-          <div style="background:var(--cream);padding:28px">
-            <div
-              style="font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--charcoal-light);margin-bottom:12px">
-              Pro Tips</div>
-            <div
-              style="font-size:13px;color:var(--charcoal-light);line-height:1.65;padding:8px 0;border-bottom:1px solid var(--cream-dark);display:flex;gap:10px">
-              <span style="color:var(--terracotta);">—</span><span>Apply in shade or mild temperatures — avoid direct
-                harsh sunlight during application or drying.</span></div>
-            <div
-              style="font-size:13px;color:var(--charcoal-light);line-height:1.65;padding:8px 0;border-bottom:1px solid var(--cream-dark);display:flex;gap:10px">
-              <span style="color:var(--terracotta);">—</span><span>For deep or vivid colours, use a tinted primer base
-                to reduce the number of topcoats needed.</span></div>
-            <div
-              style="font-size:13px;color:var(--charcoal-light);line-height:1.65;padding:8px 0;border-bottom:1px solid var(--cream-dark);display:flex;gap:10px">
-              <span style="color:var(--terracotta);">—</span><span>Stir thoroughly before and during use — do not thin
-                below recommended levels.</span></div>
-            <div
-              style="font-size:13px;color:var(--charcoal-light);line-height:1.65;padding:8px 0;border-bottom:1px solid var(--cream-dark);display:flex;gap:10px">
-              <span style="color:var(--terracotta);">—</span><span>Touch dry and recoat times assume 25°C and 50%
-                humidity — adjust for Indian climatic conditions.</span></div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- SYSTEM GUIDE -->
-    <div class="tab-panel" id="panel-system">
-      <div class="tab-grid">
-        <div>
-          <h2 class="tab-section-title">Complete Paint System</h2>
-          <p style="font-size:14px;color:var(--charcoal-light);line-height:1.8;margin-bottom:28px">The Vegam 5-Year
-            Interior System Warranty requires the use of Vegam Wallcare Putty, Vegam Interior Primer and Vegam Interior
-            Emulsion as a complete system. Using products from this system ensures optimal adhesion, coverage and
-            longevity.</p>
-          <div class="system-box">
-            <div class="system-box-title">Recommended System</div>
-            <div class="system-steps">
-              <div class="system-step"><span class="system-step-num bg-cr">1</span><span
-                  class="system-step-name">Surface Preparation</span><span class="system-step-product">Clean, dry, free
-                  of dust & grease</span></div>
-              <div class="system-step"><span class="system-step-num bg-t">2</span><span class="system-step-name">Vegam
-                  Wallcare Putty</span><span class="system-step-product">Fill cracks, sand smooth, 2 coats</span></div>
-              <div class="system-step"><span class="system-step-num bg-t">3</span><span class="system-step-name">Vegam
-                  Interior Primer</span><span class="system-step-product">1–2 coats, allow full cure</span></div>
-              <div class="system-step"><span class="system-step-num bg-t">4</span><span class="system-step-name">Vegam
-                  Interior Emulsion</span><span class="system-step-product">2 coats minimum, 4–6 hrs apart</span><span
-                  class='system-step-current current-t'>This Product</span></div>
-            </div>
-          </div>
-        </div>
-        <div>
-          <h2 class="tab-section-title">Warranty Conditions</h2>
-          <div style="font-size:14px;color:var(--charcoal-light);line-height:1.85;">
-            <div style="display:flex;gap:14px;padding:14px 0;border-bottom:1px solid var(--cream-dark);font-size:13px;">
-              <span style="color:var(--terracotta); flex-shrink:0;">✓</span><span>Full Vegam system must be used —
-                primer, intermediate and topcoat from Vegam range</span></div>
-            <div style="display:flex;gap:14px;padding:14px 0;border-bottom:1px solid var(--cream-dark);font-size:13px;">
-              <span style="color:var(--terracotta); flex-shrink:0;">✓</span><span>Surface must be properly prepared per
-                Vegam application guidelines</span></div>
-            <div style="display:flex;gap:14px;padding:14px 0;border-bottom:1px solid var(--cream-dark);font-size:13px;">
-              <span style="color:var(--terracotta); flex-shrink:0;">✓</span><span>Applied by a trained painter using
-                recommended tools and methods</span></div>
-            <div style="display:flex;gap:14px;padding:14px 0;border-bottom:1px solid var(--cream-dark);font-size:13px;">
-              <span style="color:var(--terracotta); flex-shrink:0;">✓</span><span>Normal weathering conditions —
-                warranty does not cover structural movement or flooding</span></div>
-            <div style="display:flex;gap:14px;padding:14px 0;border-bottom:1px solid var(--cream-dark);font-size:13px;">
-              <span style="color:var(--terracotta); flex-shrink:0;">✓</span><span>Warranty is non-transferable and
-                applies from date of application</span></div>
-            <div style="display:flex;gap:14px;padding:14px 0;border-bottom:1px solid var(--cream-dark);font-size:13px;">
-              <span style="color:var(--terracotta); flex-shrink:0;">✓</span><span>Contact our technical team for written
-                warranty documentation</span></div>
-          </div>
+        <div class="product-swatches-row">
           <div
-            style="background:var(--cream);padding:20px;margin-top:24px;font-size:12px;color:var(--charcoal-light);line-height:1.7">
-            <strong style="color:var(--charcoal);display:block;margin-bottom:6px">Technical Support</strong>
-            Our team provides free specification support for builders, architects and contractors. Contact us for
-            project-specific system recommendations.
+            class="product-swatch"
+            style="background: #c1623f"
+            title="Terracotta"
+          ></div>
+          <div
+            class="product-swatch"
+            style="background: #d4845a"
+            title="Amber Clay"
+          ></div>
+          <div
+            class="product-swatch"
+            style="background: #e3a96a"
+            title="Old Copper"
+          ></div>
+          <div
+            class="product-swatch"
+            style="background: #f5ecd7"
+            title="Warm Linen"
+          ></div>
+          <div
+            class="product-swatch"
+            style="background: #8b7355"
+            title="Raw Sienna"
+          ></div>
+        </div>
+      </div>
+
+      <div class="product-info-area">
+        <div class="product-category-tag">Interior Emulsions</div>
+        <h1 class="product-name">Vegam Interior Emulsion</h1>
+        <div class="product-brand-line">Vegam — Premium</div>
+        <p class="product-tagline">
+          Rich colour depth, smooth washable finish — for interiors that stay
+          beautiful.
+        </p>
+        <p class="product-short-desc">
+          Vegam Interior Emulsion is our flagship interior wall paint —
+          formulated for architects and designers who demand colour accuracy,
+          durability and a finish that holds up to daily life. Low VOC,
+          anti-bacterial and fully washable.
+        </p>
+
+        <div class="product-feature-tags">
+          <span class="ftag ftag-terracotta">Low VOC</span
+          ><span class="ftag ftag-sage">Washable</span
+          ><span class="ftag ftag-slate">Anti-bacterial</span
+          ><span class="ftag ftag-terracotta">Soft Sheen Finish</span
+          ><span class="ftag ftag-sage">Colour Accurate</span>
+        </div>
+
+        <div class="warranty-row">
+          <div class="warranty-block">
+            <span class="warranty-num">8yr</span>
+            <span class="warranty-desc"
+              >Year Exterior<br />System Warranty</span
+            >
+          </div>
+          <div class="warranty-divider"></div>
+          <div class="warranty-block">
+            <span class="warranty-num">5yr</span>
+            <span class="warranty-desc"
+              >Year Interior<br />System Warranty</span
+            >
+          </div>
+        </div>
+        <div class="product-ctas">
+          <a href="contact.html" class="btn-get-quote">Get a Quote</a>
+          <a
+            href="#"
+            class="btn-sample"
+            onclick="
+              event.preventDefault();
+              window.open(
+                'https://wa.me/919494333702?text=' +
+                  encodeURIComponent(
+                    'Hi Vegam Paints, I would like to request a sample for Vegam Interior Emulsion. Here are my details:',
+                  ),
+                '_blank',
+              );
+            "
+            >Request Sample</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- PRODUCT TABS -->
+    <div class="product-tabs-wrap">
+      <div class="product-tabs">
+        <div
+          class="product-tab active"
+          id="tab-overview"
+          onclick="openTab('overview')"
+        >
+          Overview
+        </div>
+        <div class="product-tab" id="tab-specs" onclick="openTab('specs')">
+          Specifications
+        </div>
+        <div
+          class="product-tab"
+          id="tab-application"
+          onclick="openTab('application')"
+        >
+          How to Apply
+        </div>
+        <div class="product-tab" id="tab-system" onclick="openTab('system')">
+          System Guide
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB PANELS -->
+    <div class="tab-panels">
+      <!-- OVERVIEW -->
+      <div class="tab-panel active" id="panel-overview">
+        <div class="tab-grid">
+          <div>
+            <h2 class="tab-section-title">About This Product</h2>
+            <div class="overview-body">
+              <p>
+                <strong>Vegam Interior Emulsion</strong> is engineered to
+                deliver rich, consistent colour across all interior wall and
+                ceiling surfaces. Its advanced acrylic binder ensures excellent
+                adhesion to plaster, concrete and gypsum board surfaces, while
+                the low-VOC formulation keeps indoor air quality safe from day
+                one.
+              </p>
+              <p>
+                The soft sheen finish enhances colour depth without creating
+                glare — ideal for living rooms, bedrooms, offices and
+                hospitality spaces where appearance matters as much as
+                performance.
+              </p>
+              <p>
+                Anti-bacterial additives inhibit mould and mildew growth on the
+                paint film, making this product particularly well-suited to
+                kitchens, bathrooms and humid climates.
+              </p>
+            </div>
+          </div>
+          <div>
+            <h2 class="tab-section-title">Ideal Applications</h2>
+            <div class="use-cases">
+              <div class="use-case">
+                <span class="use-case-icon">🛋️</span>
+                <div class="use-case-text">
+                  <h4>Living Rooms & Bedrooms</h4>
+                  <p>
+                    Smooth washable finish with rich colour — hides minor
+                    imperfections beautifully.
+                  </p>
+                </div>
+              </div>
+              <div class="use-case">
+                <span class="use-case-icon">🏢</span>
+                <div class="use-case-text">
+                  <h4>Commercial & Office Spaces</h4>
+                  <p>
+                    Anti-bacterial properties and durable finish for
+                    high-footfall environments.
+                  </p>
+                </div>
+              </div>
+              <div class="use-case">
+                <span class="use-case-icon">🍳</span>
+                <div class="use-case-text">
+                  <h4>Kitchens & Bathrooms</h4>
+                  <p>Moisture and mould resistance for humid rooms.</p>
+                </div>
+              </div>
+              <div class="use-case">
+                <span class="use-case-icon">🏨</span>
+                <div class="use-case-text">
+                  <h4>Hospitality Projects</h4>
+                  <p>
+                    Colour-consistent results across large areas for hotels and
+                    serviced apartments.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SPECS -->
+      <div class="tab-panel" id="panel-specs">
+        <div class="tab-grid">
+          <div>
+            <h2 class="tab-section-title">Technical Specifications</h2>
+            <table class="specs-table">
+              <tr>
+                <td>Base</td>
+                <td>Acrylic emulsion, water-based</td>
+              </tr>
+              <tr>
+                <td>Finish</td>
+                <td>Soft sheen</td>
+              </tr>
+              <tr>
+                <td>VOC Level</td>
+                <td>Low VOC — 30 g/L</td>
+              </tr>
+              <tr>
+                <td>Drying Time</td>
+                <td>Touch dry: 1 to 2 hrs | Recoat: 4 to 6 hrs</td>
+              </tr>
+              <tr>
+                <td>Coverage</td>
+                <td>120 to 140 sq ft per litre per coat</td>
+              </tr>
+              <tr>
+                <td>Coats Required</td>
+                <td>Minimum 2 coats</td>
+              </tr>
+              <tr>
+                <td>Dilution</td>
+                <td>Up to 10% water for brush, up to 20% for spray</td>
+              </tr>
+              <tr>
+                <td>Pack Sizes</td>
+                <td>1L, 4L, 10L, 20L</td>
+              </tr>
+              <tr>
+                <td>Sheen Level</td>
+                <td>10–15 GU (soft sheen)</td>
+              </tr>
+              <tr>
+                <td>Tintable</td>
+                <td>Yes — full colour range available</td>
+              </tr>
+            </table>
+          </div>
+          <div>
+            <h2 class="tab-section-title">System Coverage</h2>
+            <p
+              style="
+                font-size: 14px;
+                color: var(--charcoal-light);
+                line-height: 1.8;
+                margin-bottom: 20px;
+              "
+            >
+              Coverage is theoretical and will vary based on surface texture,
+              porosity, application method and operator skill. We recommend
+              calculating at 120 sq ft/L for project estimates.
+            </p>
+            <div style="background: var(--cream); padding: 24px">
+              <div
+                style="
+                  font-size: 10px;
+                  letter-spacing: 0.2em;
+                  text-transform: uppercase;
+                  color: var(--charcoal-light);
+                  margin-bottom: 16px;
+                "
+              >
+                Coverage Guide
+              </div>
+              <div
+                style="
+                  display: flex;
+                  justify-content: space-between;
+                  padding: 10px 0;
+                  border-bottom: 1px solid var(--cream-dark);
+                  font-size: 13px;
+                  color: var(--charcoal);
+                "
+              >
+                <span>Smooth plaster walls</span
+                ><span style="color: var(--terracotta)">130–140 sq ft/L</span>
+              </div>
+              <div
+                style="
+                  display: flex;
+                  justify-content: space-between;
+                  padding: 10px 0;
+                  border-bottom: 1px solid var(--cream-dark);
+                  font-size: 13px;
+                  color: var(--charcoal);
+                "
+              >
+                <span>Medium texture plaster</span
+                ><span style="color: var(--terracotta)">115–125 sq ft/L</span>
+              </div>
+              <div
+                style="
+                  display: flex;
+                  justify-content: space-between;
+                  padding: 10px 0;
+                  border-bottom: 1px solid var(--cream-dark);
+                  font-size: 13px;
+                  color: var(--charcoal);
+                "
+              >
+                <span>Rough / old walls</span
+                ><span style="color: var(--terracotta)">100–115 sq ft/L</span>
+              </div>
+              <div
+                style="
+                  display: flex;
+                  justify-content: space-between;
+                  padding: 10px 0;
+                  border-bottom: 1px solid var(--cream-dark);
+                  font-size: 13px;
+                  color: var(--charcoal);
+                "
+              >
+                <span>Ceiling application</span
+                ><span style="color: var(--terracotta)">125–135 sq ft/L</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- APPLICATION -->
+      <div class="tab-panel" id="panel-application">
+        <div class="tab-grid">
+          <div>
+            <h2 class="tab-section-title">Application Steps</h2>
+            <div class="steps">
+              <div class="step">
+                <span class="step-num">01</span>
+                <div class="step-body">
+                  <h4>Surface Preparation</h4>
+                  <p>
+                    Ensure walls are clean, dry and free of dust, grease and
+                    loose particles. Fill cracks with Wallcare Putty and sand
+                    smooth once cured.
+                  </p>
+                  <div class="step-tip">
+                    Allow putty to cure fully — at least 24 hours — before
+                    priming.
+                  </div>
+                </div>
+              </div>
+              <div class="step">
+                <span class="step-num">02</span>
+                <div class="step-body">
+                  <h4>Apply Vegam Interior Primer</h4>
+                  <p>
+                    Apply 1–2 coats of Vegam Interior Primer to all surfaces.
+                    Allow each coat to dry fully before proceeding.
+                  </p>
+                  <div class="step-tip">
+                    Primer coat is essential to ensure adhesion and uniform
+                    topcoat absorption.
+                  </div>
+                </div>
+              </div>
+              <div class="step">
+                <span class="step-num">03</span>
+                <div class="step-body">
+                  <h4>First Coat</h4>
+                  <p>
+                    Dilute up to 10% with clean water. Apply evenly using a
+                    roller or brush. Work in sections to maintain a wet edge.
+                  </p>
+                  <div class="step-tip">
+                    Apply in one direction first, then cross-roll to eliminate
+                    roller marks.
+                  </div>
+                </div>
+              </div>
+              <div class="step">
+                <span class="step-num">04</span>
+                <div class="step-body">
+                  <h4>Second Coat</h4>
+                  <p>
+                    Allow the first coat to dry for a minimum of 4–6 hours.
+                    Apply second coat without dilution for maximum colour
+                    intensity and coverage.
+                  </p>
+                  <div class="step-tip">
+                    Two coats are minimum for system warranty. A third coat may
+                    be needed for deep tones.
+                  </div>
+                </div>
+              </div>
+              <div class="step">
+                <span class="step-num">05</span>
+                <div class="step-body">
+                  <h4>Clean Up</h4>
+                  <p>
+                    Clean tools with water immediately after use. Dispose of
+                    waste paint responsibly.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div>
+            <h2 class="tab-section-title">Tools & Tips</h2>
+            <div
+              style="
+                background: var(--cream);
+                padding: 28px;
+                margin-bottom: 20px;
+              "
+            >
+              <div
+                style="
+                  font-size: 10px;
+                  letter-spacing: 0.2em;
+                  text-transform: uppercase;
+                  color: var(--charcoal-light);
+                  margin-bottom: 16px;
+                "
+              >
+                Recommended Tools
+              </div>
+              <div
+                style="
+                  display: flex;
+                  align-items: center;
+                  gap: 12px;
+                  padding: 10px 0;
+                  border-bottom: 1px solid var(--cream-dark);
+                  font-size: 13px;
+                  color: var(--charcoal);
+                "
+              >
+                <span>🖌️</span
+                ><span>Brush — 3–4 inch for cutting in corners and edges</span>
+              </div>
+              <div
+                style="
+                  display: flex;
+                  align-items: center;
+                  gap: 12px;
+                  padding: 10px 0;
+                  border-bottom: 1px solid var(--cream-dark);
+                  font-size: 13px;
+                  color: var(--charcoal);
+                "
+              >
+                <span>🎨</span
+                ><span>Short-nap roller (9mm) for smooth wall surfaces</span>
+              </div>
+              <div
+                style="
+                  display: flex;
+                  align-items: center;
+                  gap: 12px;
+                  padding: 10px 0;
+                  border-bottom: 1px solid var(--cream-dark);
+                  font-size: 13px;
+                  color: var(--charcoal);
+                "
+              >
+                <span>💨</span
+                ><span
+                  >Airless spray — dilute to 20% for spray application</span
+                >
+              </div>
+              <div
+                style="
+                  display: flex;
+                  align-items: center;
+                  gap: 12px;
+                  padding: 10px 0;
+                  border-bottom: 1px solid var(--cream-dark);
+                  font-size: 13px;
+                  color: var(--charcoal);
+                "
+              >
+                <span>🔲</span
+                ><span>Masking tape and dust sheets for protection</span>
+              </div>
+            </div>
+            <div style="background: var(--cream); padding: 28px">
+              <div
+                style="
+                  font-size: 10px;
+                  letter-spacing: 0.2em;
+                  text-transform: uppercase;
+                  color: var(--charcoal-light);
+                  margin-bottom: 12px;
+                "
+              >
+                Pro Tips
+              </div>
+              <div
+                style="
+                  font-size: 13px;
+                  color: var(--charcoal-light);
+                  line-height: 1.65;
+                  padding: 8px 0;
+                  border-bottom: 1px solid var(--cream-dark);
+                  display: flex;
+                  gap: 10px;
+                "
+              >
+                <span style="color: var(--terracotta)">—</span
+                ><span
+                  >Apply in shade or mild temperatures — avoid direct harsh
+                  sunlight during application or drying.</span
+                >
+              </div>
+              <div
+                style="
+                  font-size: 13px;
+                  color: var(--charcoal-light);
+                  line-height: 1.65;
+                  padding: 8px 0;
+                  border-bottom: 1px solid var(--cream-dark);
+                  display: flex;
+                  gap: 10px;
+                "
+              >
+                <span style="color: var(--terracotta)">—</span
+                ><span
+                  >For deep or vivid colours, use a tinted primer base to reduce
+                  the number of topcoats needed.</span
+                >
+              </div>
+              <div
+                style="
+                  font-size: 13px;
+                  color: var(--charcoal-light);
+                  line-height: 1.65;
+                  padding: 8px 0;
+                  border-bottom: 1px solid var(--cream-dark);
+                  display: flex;
+                  gap: 10px;
+                "
+              >
+                <span style="color: var(--terracotta)">—</span
+                ><span
+                  >Stir thoroughly before and during use — do not thin below
+                  recommended levels.</span
+                >
+              </div>
+              <div
+                style="
+                  font-size: 13px;
+                  color: var(--charcoal-light);
+                  line-height: 1.65;
+                  padding: 8px 0;
+                  border-bottom: 1px solid var(--cream-dark);
+                  display: flex;
+                  gap: 10px;
+                "
+              >
+                <span style="color: var(--terracotta)">—</span
+                ><span
+                  >Touch dry and recoat times assume 25°C and 50% humidity —
+                  adjust for Indian climatic conditions.</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SYSTEM GUIDE -->
+      <div class="tab-panel" id="panel-system">
+        <div class="tab-grid">
+          <div>
+            <h2 class="tab-section-title">Complete Paint System</h2>
+            <p
+              style="
+                font-size: 14px;
+                color: var(--charcoal-light);
+                line-height: 1.8;
+                margin-bottom: 28px;
+              "
+            >
+              The Vegam 5-Year Interior System Warranty requires the use of
+              Vegam Wallcare Putty, Vegam Interior Primer and Vegam Interior
+              Emulsion as a complete system. Using products from this system
+              ensures optimal adhesion, coverage and longevity.
+            </p>
+            <div class="system-box">
+              <div class="system-box-title">Recommended System</div>
+              <div class="system-steps">
+                <div class="system-step">
+                  <span class="system-step-num bg-cr">1</span
+                  ><span class="system-step-name">Surface Preparation</span
+                  ><span class="system-step-product"
+                    >Clean, dry, free of dust & grease</span
+                  >
+                </div>
+                <div class="system-step">
+                  <span class="system-step-num bg-t">2</span
+                  ><span class="system-step-name">Vegam Wallcare Putty</span
+                  ><span class="system-step-product"
+                    >Fill cracks, sand smooth, 2 coats</span
+                  >
+                </div>
+                <div class="system-step">
+                  <span class="system-step-num bg-t">3</span
+                  ><span class="system-step-name">Vegam Interior Primer</span
+                  ><span class="system-step-product"
+                    >1–2 coats, allow full cure</span
+                  >
+                </div>
+                <div class="system-step">
+                  <span class="system-step-num bg-t">4</span
+                  ><span class="system-step-name">Vegam Interior Emulsion</span
+                  ><span class="system-step-product"
+                    >2 coats minimum, 4–6 hrs apart</span
+                  ><span class="system-step-current current-t"
+                    >This Product</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+          <div>
+            <h2 class="tab-section-title">Warranty Conditions</h2>
+            <div
+              style="
+                font-size: 14px;
+                color: var(--charcoal-light);
+                line-height: 1.85;
+              "
+            >
+              <div
+                style="
+                  display: flex;
+                  gap: 14px;
+                  padding: 14px 0;
+                  border-bottom: 1px solid var(--cream-dark);
+                  font-size: 13px;
+                "
+              >
+                <span style="color: var(--terracotta); flex-shrink: 0">✓</span
+                ><span
+                  >Full Vegam system must be used — primer, intermediate and
+                  topcoat from Vegam range</span
+                >
+              </div>
+              <div
+                style="
+                  display: flex;
+                  gap: 14px;
+                  padding: 14px 0;
+                  border-bottom: 1px solid var(--cream-dark);
+                  font-size: 13px;
+                "
+              >
+                <span style="color: var(--terracotta); flex-shrink: 0">✓</span
+                ><span
+                  >Surface must be properly prepared per Vegam application
+                  guidelines</span
+                >
+              </div>
+              <div
+                style="
+                  display: flex;
+                  gap: 14px;
+                  padding: 14px 0;
+                  border-bottom: 1px solid var(--cream-dark);
+                  font-size: 13px;
+                "
+              >
+                <span style="color: var(--terracotta); flex-shrink: 0">✓</span
+                ><span
+                  >Applied by a trained painter using recommended tools and
+                  methods</span
+                >
+              </div>
+              <div
+                style="
+                  display: flex;
+                  gap: 14px;
+                  padding: 14px 0;
+                  border-bottom: 1px solid var(--cream-dark);
+                  font-size: 13px;
+                "
+              >
+                <span style="color: var(--terracotta); flex-shrink: 0">✓</span
+                ><span
+                  >Normal weathering conditions — warranty does not cover
+                  structural movement or flooding</span
+                >
+              </div>
+              <div
+                style="
+                  display: flex;
+                  gap: 14px;
+                  padding: 14px 0;
+                  border-bottom: 1px solid var(--cream-dark);
+                  font-size: 13px;
+                "
+              >
+                <span style="color: var(--terracotta); flex-shrink: 0">✓</span
+                ><span
+                  >Warranty is non-transferable and applies from date of
+                  application</span
+                >
+              </div>
+              <div
+                style="
+                  display: flex;
+                  gap: 14px;
+                  padding: 14px 0;
+                  border-bottom: 1px solid var(--cream-dark);
+                  font-size: 13px;
+                "
+              >
+                <span style="color: var(--terracotta); flex-shrink: 0">✓</span
+                ><span
+                  >Contact our technical team for written warranty
+                  documentation</span
+                >
+              </div>
+            </div>
+            <div
+              style="
+                background: var(--cream);
+                padding: 20px;
+                margin-top: 24px;
+                font-size: 12px;
+                color: var(--charcoal-light);
+                line-height: 1.7;
+              "
+            >
+              <strong
+                style="
+                  color: var(--charcoal);
+                  display: block;
+                  margin-bottom: 6px;
+                "
+                >Technical Support</strong
+              >
+              Our team provides free specification support for builders,
+              architects and contractors. Contact us for project-specific system
+              recommendations.
+            </div>
           </div>
         </div>
       </div>
     </div>
 
-  </div>
-
-  <!-- RELATED PRODUCTS -->
-  <section class="related">
-    <h2 class="related-title">Complete the System</h2>
-    <div class="related-grid"><a href="vegam-interior-primer.html" class="related-card">
-        <div class="related-card-top" style="background:#C1623F"></div>
-        <div class="related-card-image" style="background:linear-gradient(135deg,#F5ECD7,#EDD9B8)"><img
-            src="/images/texture_1.jpg" style="width:100%;height:100%;object-fit:cover;"></div>
-        <div class="related-card-body">
-          <div class="related-card-brand related-brand-v">Vegam — Premium</div>
-          <div class="related-card-name">Vegam Interior Primer</div>
-          <div class="related-card-desc">Deep penetrating primer for all interior surfaces</div>
-        </div>
-      </a><a href="vegam-wallcare-putty.html" class="related-card">
-        <div class="related-card-top" style="background:#C1623F"></div>
-        <div class="related-card-image" style="background:linear-gradient(135deg,#F5ECD7,#EDD9B8)"><img
-            src="/images/texture_1.jpg" style="width:100%;height:100%;object-fit:cover;"></div>
-        <div class="related-card-body">
-          <div class="related-card-brand related-brand-v">Vegam — Premium</div>
-          <div class="related-card-name">Wallcare Putty Powder</div>
-          <div class="related-card-desc">Smooth base coat before any interior paint</div>
-        </div>
-      </a><a href="vegam-ceiling-white.html" class="related-card">
-        <div class="related-card-top" style="background:#C1623F"></div>
-        <div class="related-card-image" style="background:linear-gradient(135deg,#F5ECD7,#EDD9B8)"><img
-            src="/images/texture_1.jpg" style="width:100%;height:100%;object-fit:cover;"></div>
-        <div class="related-card-body">
-          <div class="related-card-brand related-brand-v">Vegam — Premium</div>
-          <div class="related-card-name">Vegam Ceiling White</div>
-          <div class="related-card-desc">High-reflectance drip-resistant ceiling paint</div>
-        </div>
-      </a><a href="vegam-exterior-emulsion.html" class="related-card">
-        <div class="related-card-top" style="background:#C1623F"></div>
-        <div class="related-card-image" style="background:linear-gradient(135deg,#F5ECD7,#EDD9B8)"><img
-            src="/images/texture_1.jpg" style="width:100%;height:100%;object-fit:cover;"></div>
-        <div class="related-card-body">
-          <div class="related-card-brand related-brand-v">Vegam — Premium</div>
-          <div class="related-card-name">Vegam Exterior Emulsion</div>
-          <div class="related-card-desc">8-year system exterior emulsion</div>
-        </div>
-      </a></div>
-  </section>
-
-  <!-- CTA STRIP -->
-  <section class="product-cta-strip ">
-    <div class="cta-strip-text">
-      <h2>Ready to Specify Vegam Interior Emulsion?</h2>
-      <p>Get pricing, samples or technical data — our team responds within one business day.</p>
-    </div>
-    <div class="cta-strip-btns">
-      <a href="contact.html" class="btn-white-strip ">Get a Quote</a>
-      <a href="products.html" class="btn-ghost-strip">Back to Products</a>
-    </div>
-  </section>
-
-
-  <footer>
-    <div class="footer-tri-border"></div>
-    <div class="footer-grid">
-      <div>
-        <div class="footer-logo-main">Vegam Paints</div>
-        <div class="footer-logo-sub">Architectural Coatings · Est. 2025</div>
-        <p class="footer-desc">Premium architectural paints built for builders, architects and designers. Two brands —
-          Vegam and Cycle — giving professionals complete flexibility.</p>
+    <!-- RELATED PRODUCTS -->
+    <section class="related">
+      <h2 class="related-title">Complete the System</h2>
+      <div class="related-grid">
+        <a href="vegam-interior-primer.html" class="related-card">
+          <div class="related-card-top" style="background: #c1623f"></div>
+          <div
+            class="related-card-image"
+            style="background: linear-gradient(135deg, #f5ecd7, #edd9b8)"
+          >
+            <img
+              src="/images/texture_1.jpg"
+              style="width: 100%; height: 100%; object-fit: cover"
+            />
+          </div>
+          <div class="related-card-body">
+            <div class="related-card-brand related-brand-v">
+              Vegam — Premium
+            </div>
+            <div class="related-card-name">Vegam Interior Primer</div>
+            <div class="related-card-desc">
+              Deep penetrating primer for all interior surfaces
+            </div>
+          </div> </a
+        ><a href="vegam-wallcare-putty.html" class="related-card">
+          <div class="related-card-top" style="background: #c1623f"></div>
+          <div
+            class="related-card-image"
+            style="background: linear-gradient(135deg, #f5ecd7, #edd9b8)"
+          >
+            <img
+              src="/images/texture_1.jpg"
+              style="width: 100%; height: 100%; object-fit: cover"
+            />
+          </div>
+          <div class="related-card-body">
+            <div class="related-card-brand related-brand-v">
+              Vegam — Premium
+            </div>
+            <div class="related-card-name">Wallcare Putty Powder</div>
+            <div class="related-card-desc">
+              Smooth base coat before any interior paint
+            </div>
+          </div> </a
+        ><a href="vegam-ceiling-white.html" class="related-card">
+          <div class="related-card-top" style="background: #c1623f"></div>
+          <div
+            class="related-card-image"
+            style="background: linear-gradient(135deg, #f5ecd7, #edd9b8)"
+          >
+            <img
+              src="/images/texture_1.jpg"
+              style="width: 100%; height: 100%; object-fit: cover"
+            />
+          </div>
+          <div class="related-card-body">
+            <div class="related-card-brand related-brand-v">
+              Vegam — Premium
+            </div>
+            <div class="related-card-name">Vegam Ceiling White</div>
+            <div class="related-card-desc">
+              High-reflectance drip-resistant ceiling paint
+            </div>
+          </div> </a
+        ><a href="vegam-exterior-emulsion.html" class="related-card">
+          <div class="related-card-top" style="background: #c1623f"></div>
+          <div
+            class="related-card-image"
+            style="background: linear-gradient(135deg, #f5ecd7, #edd9b8)"
+          >
+            <img
+              src="/images/texture_1.jpg"
+              style="width: 100%; height: 100%; object-fit: cover"
+            />
+          </div>
+          <div class="related-card-body">
+            <div class="related-card-brand related-brand-v">
+              Vegam — Premium
+            </div>
+            <div class="related-card-name">Vegam Exterior Emulsion</div>
+            <div class="related-card-desc">8-year system exterior emulsion</div>
+          </div>
+        </a>
       </div>
-      <div>
-        <div class="footer-col-title">Quick Links</div>
-        <ul class="footer-links">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About Us</a></li>
-          <li><a href="products.html">Products</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
+    </section>
+
+    <!-- CTA STRIP -->
+    <section class="product-cta-strip">
+      <div class="cta-strip-text">
+        <h2>Ready to Specify Vegam Interior Emulsion?</h2>
+        <p>
+          Get pricing, samples or technical data — our team responds within one
+          business day.
+        </p>
       </div>
-      <div>
-        <div class="footer-col-title">Our Brands</div>
-        <ul class="footer-links">
-          <li><a href="products.html">Vegam — Premium</a></li>
-          <li><a href="products.html">Cycle — Economy</a></li>
-          <li><a href="products.html">Interior Range</a></li>
-          <li><a href="products.html">Exterior Range</a></li>
-          <li><a href="products.html">Textured Finishes</a></li>
-        </ul>
+      <div class="cta-strip-btns">
+        <a href="contact.html" class="btn-white-strip">Get a Quote</a>
+        <a href="products.html" class="btn-ghost-strip">Back to Products</a>
       </div>
-      <div>
-        <div class="footer-col-title">Contact Us</div>
-        <div class="footer-contact-item"><span class="footer-contact-icon">📍</span><span
-            class="footer-contact-text">Hyderabad, Telangana, India</span></div>
-        <div class="footer-contact-item"><span class="footer-contact-icon">📞</span><span
-            class="footer-contact-text">+91 00000 00000</span></div>
-        <div class="footer-contact-item"><span class="footer-contact-icon">✉️</span><span
-            class="footer-contact-text">hello@vegampaints.com</span></div>
+    </section>
+
+    <footer>
+      <div class="footer-tri-border"></div>
+      <div class="footer-grid">
+        <div>
+          <div class="footer-logo-main">Vegam Paints</div>
+          <div class="footer-logo-sub">Architectural Coatings · Est. 2025</div>
+          <p class="footer-desc">
+            Premium architectural paints built for builders, architects and
+            designers. Two brands — Vegam and Cycle — giving professionals
+            complete flexibility.
+          </p>
+        </div>
+        <div>
+          <div class="footer-col-title">Quick Links</div>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-col-title">Our Brands</div>
+          <ul class="footer-links">
+            <li><a href="products.html">Vegam — Premium</a></li>
+            <li><a href="products.html">Cycle — Economy</a></li>
+            <li><a href="products.html">Interior Range</a></li>
+            <li><a href="products.html">Exterior Range</a></li>
+            <li><a href="products.html">Textured Finishes</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-col-title">Contact Us</div>
+          <div class="footer-contact-item">
+            <span class="footer-contact-icon">📍</span
+            ><span class="footer-contact-text"
+              >Hyderabad, Telangana, India</span
+            >
+          </div>
+          <div class="footer-contact-item">
+            <span class="footer-contact-icon">📞</span
+            ><span class="footer-contact-text">+91 00000 00000</span>
+          </div>
+          <div class="footer-contact-item">
+            <span class="footer-contact-icon">✉️</span
+            ><span class="footer-contact-text">hello@vegampaints.com</span>
+          </div>
+        </div>
       </div>
-    </div>
-    <div class="footer-bottom">
-      <span class="footer-copy">© 2025 Vegam Paints. All rights reserved.</span>
-      <span class="footer-made">Made with care in India 🇮🇳</span>
-    </div>
-  </footer>
+      <div class="footer-bottom">
+        <span class="footer-copy"
+          >© 2025 Vegam Paints. All rights reserved.</span
+        >
+        <span class="footer-made">Made with care in India 🇮🇳</span>
+      </div>
+    </footer>
 
-
-
-  <script>
-    function openTab(id) {
-      document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
-      document.querySelectorAll('.product-tab').forEach(t => t.classList.remove('active'));
-      document.getElementById('panel-' + id).classList.add('active');
-      document.getElementById('tab-' + id).classList.add('active');
-
-    }
-  </script>
-
-  <style>
-    .wa-container {
-      position: fixed;
-      bottom: 20px;
-      left: 20px;
-      z-index: 1000;
-    }
-
-    .wa-float {
-      width: 60px;
-      height: 60px;
-      background: #25D366;
-      color: white;
-      border-radius: 50px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-decoration: none;
-      transition: transform 0.3s;
-      box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
-    }
-
-    .wa-float:hover {
-      transform: scale(1.1);
-      color: white;
-    }
-
-    .wa-close {
-      background: white;
-      color: black;
-      border-radius: 50%;
-      width: 20px;
-      height: 20px;
-      font-size: 12px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      border: 1px solid #ccc;
-      position: absolute;
-      top: -5px;
-      right: -5px;
-      z-index: 1001;
-      line-height: 1;
-      padding-bottom: 2px;
-    }
-
-    .scroll-top {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      width: 50px;
-      height: 50px;
-      background: var(--terracotta);
-      color: white;
-      border-radius: 50%;
-      display: none;
-      align-items: center;
-      justify-content: center;
-      font-size: 24px;
-      cursor: pointer;
-      z-index: 1000;
-      box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
-      transition: background 0.3s;
-    }
-
-    .scroll-top:hover {
-      background: var(--terracotta-dark);
-    }
-  </style>
-  <div class="wa-container" id="wa-container">
-    <div class="wa-close" onclick="document.getElementById('wa-container').style.display='none'">✖</div>
-    <a href="https://wa.me/919494333702" class="wa-float" target="_blank" title="Chat with us on WhatsApp">
-      <svg style="width:35px;height:35px" viewBox="0 0 24 24">
-        <path fill="currentColor"
-          d="M19.05 4.91A9.816 9.816 0 0 0 12.04 2c-5.46 0-9.91 4.45-9.91 9.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21c5.46 0 9.91-4.45 9.91-9.91c0-2.65-1.03-5.14-2.9-7.01zm-7.01 15.24c-1.48 0-2.93-.4-4.2-1.15l-.3-.18l-3.12.82l.83-3.04l-.2-.31a8.264 8.264 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24c2.2 0 4.27.86 5.82 2.42a8.183 8.183 0 0 1 2.41 5.83c.02 4.54-3.68 8.23-8.22 8.23zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81c-.23-.08-.39-.12-.56.12c-.17.25-.64.81-.78.97c-.14.17-.29.19-.54.06c-.25-.12-1.05-.39-1.99-1.23c-.74-.66-1.23-1.47-1.38-1.72c-.14-.25-.02-.38.11-.51c.11-.11.25-.29.37-.43s.17-.25.25-.41c.08-.17.04-.31-.02-.43s-.56-1.34-.76-1.84c-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31c-.22.25-.86.85-.86 2.07c0 1.22.89 2.4 1.01 2.56c.12.17 1.75 2.67 4.23 3.74c.59.26 1.05.41 1.41.52c.59.19 1.13.16 1.56.1c.48-.07 1.47-.6 1.67-1.18c.2-.58.2-.1.14-.18c-.06-.09-.23-.15-.48-.28z" />
-      </svg>
-    </a>
-  </div>
-  <div class="scroll-top" id="scrollTopBtn" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">↑</div>
-  <script>
-    window.addEventListener('scroll', function () {
-      if (window.scrollY > 300) {
-        document.getElementById('scrollTopBtn').style.display = 'flex';
-      } else {
-        document.getElementById('scrollTopBtn').style.display = 'none';
+    <script>
+      function openTab(id) {
+        document
+          .querySelectorAll(".tab-panel")
+          .forEach((p) => p.classList.remove("active"));
+        document
+          .querySelectorAll(".product-tab")
+          .forEach((t) => t.classList.remove("active"));
+        document.getElementById("panel-" + id).classList.add("active");
+        document.getElementById("tab-" + id).classList.add("active");
       }
-    });
-  </script>
-  \n
-</body>
+    </script>
 
+    <style>
+      .wa-container {
+        position: fixed;
+        bottom: 20px;
+        left: 20px;
+        z-index: 1000;
+      }
+
+      .wa-float {
+        width: 60px;
+        height: 60px;
+        background: #25d366;
+        color: white;
+        border-radius: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        transition: transform 0.3s;
+        box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+      }
+
+      .wa-float:hover {
+        transform: scale(1.1);
+        color: white;
+      }
+
+      .wa-close {
+        background: white;
+        color: black;
+        border-radius: 50%;
+        width: 20px;
+        height: 20px;
+        font-size: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        border: 1px solid #ccc;
+        position: absolute;
+        top: -5px;
+        right: -5px;
+        z-index: 1001;
+        line-height: 1;
+        padding-bottom: 2px;
+      }
+
+      .scroll-top {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        width: 50px;
+        height: 50px;
+        background: var(--terracotta);
+        color: white;
+        border-radius: 50%;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        font-size: 24px;
+        cursor: pointer;
+        z-index: 1000;
+        box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+        transition: background 0.3s;
+      }
+
+      .scroll-top:hover {
+        background: var(--terracotta-dark);
+      }
+    </style>
+    <div class="wa-container" id="wa-container">
+      <div
+        class="wa-close"
+        onclick="document.getElementById('wa-container').style.display = 'none'"
+      >
+        ✖
+      </div>
+      <a
+        href="https://wa.me/919494333702"
+        class="wa-float"
+        target="_blank"
+        title="Chat with us on WhatsApp"
+      >
+        <svg style="width: 35px; height: 35px" viewBox="0 0 24 24">
+          <path
+            fill="currentColor"
+            d="M19.05 4.91A9.816 9.816 0 0 0 12.04 2c-5.46 0-9.91 4.45-9.91 9.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21c5.46 0 9.91-4.45 9.91-9.91c0-2.65-1.03-5.14-2.9-7.01zm-7.01 15.24c-1.48 0-2.93-.4-4.2-1.15l-.3-.18l-3.12.82l.83-3.04l-.2-.31a8.264 8.264 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24c2.2 0 4.27.86 5.82 2.42a8.183 8.183 0 0 1 2.41 5.83c.02 4.54-3.68 8.23-8.22 8.23zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81c-.23-.08-.39-.12-.56.12c-.17.25-.64.81-.78.97c-.14.17-.29.19-.54.06c-.25-.12-1.05-.39-1.99-1.23c-.74-.66-1.23-1.47-1.38-1.72c-.14-.25-.02-.38.11-.51c.11-.11.25-.29.37-.43s.17-.25.25-.41c.08-.17.04-.31-.02-.43s-.56-1.34-.76-1.84c-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31c-.22.25-.86.85-.86 2.07c0 1.22.89 2.4 1.01 2.56c.12.17 1.75 2.67 4.23 3.74c.59.26 1.05.41 1.41.52c.59.19 1.13.16 1.56.1c.48-.07 1.47-.6 1.67-1.18c.2-.58.2-.1.14-.18c-.06-.09-.23-.15-.48-.28z"
+          />
+        </svg>
+      </a>
+    </div>
+    <div
+      class="scroll-top"
+      id="scrollTopBtn"
+      onclick="window.scrollTo({ top: 0, behavior: 'smooth' })"
+    >
+      ↑
+    </div>
+    <script>
+      window.addEventListener("scroll", function () {
+        if (window.scrollY > 300) {
+          document.getElementById("scrollTopBtn").style.display = "flex";
+        } else {
+          document.getElementById("scrollTopBtn").style.display = "none";
+        }
+      });
+    </script>
+    \n
+  </body>
 </html>
-
-
