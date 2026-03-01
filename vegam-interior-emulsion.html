@@ -1127,19 +1127,45 @@
         }
       });
     </script>
+
     <script>
   const swatches = document.querySelectorAll(".product-swatch");
   const heroSection = document.getElementById("productHero");
 
   swatches.forEach((swatch) => {
     swatch.addEventListener("click", function () {
-      const selectedColor = this.style.background;
+      const selectedColor = window.getComputedStyle(this).backgroundColor;
 
-      // Change only hero section background
+      // Change hero background
       heroSection.style.background = selectedColor;
+      heroSection.style.transition = "all 0.4s ease";
 
-      // Optional: smooth transition
-      heroSection.style.transition = "background 0.4s ease";
+      // Convert RGB to brightness
+      const rgb = selectedColor.match(/\d+/g);
+      const brightness =
+        (parseInt(rgb[0]) * 299 +
+          parseInt(rgb[1]) * 587 +
+          parseInt(rgb[2]) * 114) /
+        1000;
+
+      // If background is dark → text becomes white
+      if (brightness < 150) {
+        heroSection.style.color = "#ffffff";
+
+        heroSection.querySelectorAll(".ftag").forEach(tag => {
+          tag.style.borderColor = "#ffffff";
+          tag.style.color = "#ffffff";
+        });
+
+      } else {
+        // If background is light → text becomes dark
+        heroSection.style.color = "#1a1a1a";
+
+        heroSection.querySelectorAll(".ftag").forEach(tag => {
+          tag.style.borderColor = "#1a1a1a";
+          tag.style.color = "#1a1a1a";
+        });
+      }
     });
   });
 </script>
