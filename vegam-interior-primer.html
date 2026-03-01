@@ -11,9 +11,27 @@
 <style>
   .animate-on-scroll { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
   .animate-on-scroll.is-visible { opacity: 1; transform: translateY(0); }
+    .nav-links.mobile-open {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        top: -150px;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: white;
+        padding: 200px 40px;
+        gap: 30px;
+        z-index: 100;
+      }
+
+      .nav-links.mobile-open a {
+        font-size: 18px;
+      }
 </style>
 <script>
   document.addEventListener('DOMContentLoaded', () => {
+    // Scroll Animations
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -26,9 +44,27 @@
         el.classList.add('animate-on-scroll');
         observer.observe(el);
     });
+
+    // Mobile Navigation Toggle
+    const navLinks = document.querySelector('.nav-links');
+    const mobileToggle = document.createElement('div');
+    mobileToggle.className = 'mobile-toggle';
+    mobileToggle.innerHTML = '<span></span><span></span><span></span>';
+    const nav = document.querySelector('nav');
+    if (nav) nav.appendChild(mobileToggle);
+
+    mobileToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('mobile-open');
+    });
+
+    // Close mobile menu when a link is clicked
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('mobile-open');
+      });
+    });
   });
 </script>
-  <link rel="stylesheet" href="responsive.css">
 </head>
 <body>
 
@@ -44,15 +80,20 @@
     <li><a href="products.html" class="active">Products</a></li>
     <li><a href="contact.html">Contact</a></li>
   </ul>
-  <a href="contact.html" class="nav-cta">Get a Quote</a>
-
-  <button class="hamburger" id="mobile-menu-btn" style="display: none; background: none; border: none; cursor: pointer;">
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
-  </button>
+  <div><a href="contact.html" class="nav-cta">Get a Quote</a></div>
 </nav>
 
 
-
+<!-- BREADCRUMB -->
+<div class="breadcrumb">
+  <a href="index.html">Home</a>
+  <span class="breadcrumb-sep">›</span>
+  <a href="products.html">Products</a>
+  <span class="breadcrumb-sep">›</span>
+  <a href="products.html">Primers</a>
+  <span class="breadcrumb-sep">›</span>
+  <span class="breadcrumb-current">Vegam Interior Primer</span>
+</div>
 
 <!-- PRODUCT HERO -->
 <section class="product-hero vegam-product">
@@ -60,7 +101,7 @@
     <span class="product-brand-ribbon ribbon-vegam">Vegam — Premium</span>
     
     <div class="product-image-box">
-      <div class="product-image-box-inner">
+      <div class="product-image-box-inner" style="width: 80%; height: 80%;">
         <img src="/images/interior_hero_3.jpg" alt="Product Image" style="width:100%;height:100%;object-fit:cover;">
       </div>
     </div>
@@ -270,8 +311,7 @@
     }
   });
 </script>
-\n  <script src="responsive.js"></script>
-<script type="module" src="src/main.js"></script>
-
-</body>
+\n</body>
 </html>
+
+
