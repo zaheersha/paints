@@ -96,7 +96,7 @@
     </div>
 
     <!-- PRODUCT HERO -->
-    <section class="product-hero vegam-product">
+    <section class="product-hero vegam-product" id="productHero" >
       <div class="product-image-area">
         <span class="product-brand-ribbon ribbon-vegam">Vegam — Premium</span>
 
@@ -1127,6 +1127,22 @@
         }
       });
     </script>
+    <script>
+  const swatches = document.querySelectorAll(".product-swatch");
+  const heroSection = document.getElementById("productHero");
+
+  swatches.forEach((swatch) => {
+    swatch.addEventListener("click", function () {
+      const selectedColor = this.style.background;
+
+      // Change only hero section background
+      heroSection.style.background = selectedColor;
+
+      // Optional: smooth transition
+      heroSection.style.transition = "background 0.4s ease";
+    });
+  });
+</script>
     \n
   </body>
 </html>
