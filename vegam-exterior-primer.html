@@ -23,37 +23,6 @@
         opacity: 1;
         transform: translateY(0);
       }
-      .nav-links.mobile-open {
-        display: flex;
-        flex-direction: column;
-        position: fixed;
-        top: -150px;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: white;
-        padding: 200px 40px;
-        gap: 30px;
-        z-index: 100;
-      }
-
-      .nav-links.mobile-open a {
-        font-size: 18px;
-      }
-      @media (max-width: 768px) {
-        .nav-links {
-          display: none;
-        }
-
-        .nav-links.mobile-open {
-          display: flex;
-        }
-
-        .mobile-toggle {
-          display: block;
-          cursor: pointer;
-        }
-      }
     </style>
     <script>
       document.addEventListener("DOMContentLoaded", () => {
