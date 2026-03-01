@@ -1135,25 +1135,31 @@
     swatch.addEventListener("click", function () {
       const selectedColor = window.getComputedStyle(this).backgroundColor;
 
-      // Change hero background
       hero.style.background = selectedColor;
-      hero.style.transition = "all 0.4s ease";
+      hero.style.transition = "background 0.4s ease";
 
-      // Get RGB values
       const rgb = selectedColor.match(/\d+/g);
       const brightness =
         (rgb[0] * 299 + rgb[1] * 587 + rgb[2] * 114) / 1000;
 
       const textColor = brightness < 150 ? "#ffffff" : "#1a1a1a";
 
-      // Change ALL text inside hero
-      hero.querySelectorAll("*").forEach((el) => {
+      // Change only important text elements
+      hero.querySelectorAll(
+        ".product-name, .product-brand-line, .product-tagline, .product-short-desc, .product-category-tag"
+      ).forEach((el) => {
         el.style.color = textColor;
       });
 
-      // Optional: adjust feature tag borders also
+      // Feature tags
       hero.querySelectorAll(".ftag").forEach((tag) => {
+        tag.style.color = textColor;
         tag.style.borderColor = textColor;
+      });
+
+      // Warranty text only (not box background)
+      hero.querySelectorAll(".warranty-num, .warranty-desc").forEach((el) => {
+        el.style.color = textColor;
       });
     });
   });
